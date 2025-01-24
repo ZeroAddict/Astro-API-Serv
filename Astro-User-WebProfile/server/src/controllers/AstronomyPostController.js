@@ -1,6 +1,6 @@
-const AstronomyPost = mongoose.model('AstronomyPost', astronomyPostSchema);
+const AstronomyPost = mongoose.model('AstronomyPost', AstronomyPostSchema);
 
-// Improved error handling with specific error messages
+// Improved error handlings
 exports.create = async (req, res) => {
   try {
     const { title, content, category, imageUrl, source } = req.body;
