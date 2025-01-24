@@ -12,12 +12,12 @@ passport.use(
     try {
       const user = await User.findByID(jwtPayload._id)
       if(!user){
-        return done(new Error('No user found'), false)
+        return done(new Error('No user found. Please consider signin up'), false)
       }
 
     return done(null, user)
     } catch (error) {
-      return done(new Error('No user matches this'), false)
+      return done(new Error('Can\'t Logint. No user matches this'), false)
     }
 
   }))

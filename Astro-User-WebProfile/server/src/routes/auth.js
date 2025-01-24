@@ -16,7 +16,7 @@ routeHandler.get('/logout', logout);
 
 exports.logout = (req, res) => {
   res.clearCookie('t');
-  res.json({ message: 'Logging out successful' });
+  res.json({ message: 'Logging out' });
 };
 
 exports.requireSignin = expressJwt ({ secret: JwtSecret, userProperty: 'auth' });
@@ -25,7 +25,7 @@ exports.isAuth = (req, res, next) => {
   let user = req.profile && req.auth && req.profile._id == req.auth._id;
   if (!user) {
     return res.status(403).json({
-      error: 'Access denied'
+      error: 'Access denied. No user found'
     });
   }
   next();
@@ -34,7 +34,7 @@ exports.isAuth = (req, res, next) => {
 exports.isAdmin = (req, res, next) => {
   if (req.profile.role === 0) {
     return res.status(403).json({
-      error: 'Access denied'
+      error: 'Access denied. Unauthorized'
     });
   } next();
 };
