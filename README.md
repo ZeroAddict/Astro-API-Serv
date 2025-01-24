@@ -5,7 +5,7 @@ Astro API Service
 This project provides a backend API service for an astronomy application. It utilizes various technologies to integrate with external data sources and potentially serve a frontend application.
 
 Non-Originality Disclosure:
-
+A personal completed version of the NASA project from Complete Node.js Developer: Zero to Mastery.
 The core functionalities for the Kepler Exoplanet data might be inspired by the Zero-to-Mastery course on the same topic. Due acknowledgement to the source. [Zero to Mastery](https://academy.zerotomastery.io/a/aff_jqtq5631/external?affcode=441520_1jw4f2ay).
 
 
