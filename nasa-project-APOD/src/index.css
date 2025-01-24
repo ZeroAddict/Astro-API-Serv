@@ -1,0 +1,123 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply font-inter font-sans text-white bg-[#030615] font-synthesis-none text-rendering-optimizeLegibility;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  @apply p-0 m-0 box-border;
+}
+
+#root {
+  @apply min-h-screen flex flex-col relative;
+}
+
+.imgContainer {
+  @apply flex flex-col max-h-screen w-full;
+}
+
+.bgImage {
+  @apply w-full h-full flex-1 object-cover;
+}
+
+footer {
+  @apply fixed bottom-0 left-0 w-full flex items-center justify-between gap-1rem p-1rem;
+}
+
+footer div {
+  @apply flex flex-col;
+}
+
+footer h2 {
+  @apply text-1.4rem;
+}
+
+footer h1 {
+  @apply text-0.9rem font-thin;
+}
+
+footer button {
+  @apply bg-transparent border-none outline-none text-white p-1rem transition-duration-200ms cursor-pointer;
+}
+
+footer button i {
+  @apply text-1.3rem;
+}
+
+footer button:hover {
+  @apply opacity-70;
+}
+
+.bgGradient {
+  @apply absolute inset-0 z-negative bg-gradient-to-t from-[#030615] to-transparent;
+}
+
+.sidebar {
+  @apply fixed inset-0 flex flex-col z-10;
+}
+
+.bgOverlay {
+  @apply absolute inset-0 bg-[#030615] opacity-60;
+}
+
+.sidebarContents {
+  @apply z-15 relative flex flex-col gap-1rem p-1rem overflow-y-scroll h-full w-80 max-w-md ml-auto bg-[#030615];
+}
+
+.sidebarContents h2 {
+  @apply font-thin text-1.4rem;
+}
+
+.sidebarContents div {
+  @apply flex-1;
+}
+
+.sidebarContents button {
+  @apply bg-transparent text-white border-none outline-none mr-auto cursor-pointer transition-duration-200ms py-1rem;
+}
+
+.sidebarContents button:hover {
+  @apply opacity-70;
+}
+
+.descriptionContainer {
+  @apply flex flex-col gap-0.5rem;
+}
+
+.descriptionTitle {
+  @apply text-1.1rem font-thin;
+}
+
+.loadingState {
+  @apply flex items-center justify-center flex-1;
+}
+
+.loadingState i {
+  @apply opacity-20 text-3rem animate-spin;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 640px) {
+  .sidebar {
+    @apply relative inset-unset min-w-30 max-h-screen shadow-[0_0_40px_1px_#030615];
+  }
+  .sidebarContents {
+    @apply m-0 w-full;
+  }
+  .bgOverlay {
+    @apply right-0 left-unset w-fullvw;
+  }
+}
